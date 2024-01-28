@@ -12,34 +12,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mrsdeus.librarycontrol.models.ApplicationUser.ApplicationUser;
-import com.mrsdeus.librarycontrol.services.ApplicationUserService;
+import com.mrsdeus.librarycontrol.models.ApplicationUser.Role;
+import com.mrsdeus.librarycontrol.services.RoleService;
 
 @RestController
-@RequestMapping("/api/v1/user")
-public class ApplicationUserController {
+@RequestMapping("/api/v1/role")
+public class RoleController {
 	
 	@Autowired
-	ApplicationUserService service;
+	RoleService service;
 	
     @PostMapping
-    public ApplicationUser save(@RequestBody ApplicationUser user){
-        return service.save(user);
+    public Role save(@RequestBody Role role){
+        return service.save(role);
     }
 	
     @GetMapping
-    public List<ApplicationUser> findAll(){
+    public List<Role> findAll(){
         return service.findAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<ApplicationUser> findById(UUID id){
+    public Optional<Role> findById(UUID id){
         return service.findById(id);
     }
     
-    @GetMapping("/{username}")
-    public ApplicationUser loadUserByUsername(String username){
-        return service.loadUserByUsername(username);
+    @GetMapping("/{authority}")
+    public Role loadUserByUsername(String authority){
+        return service.findByAuthority(authority);
     }
 
     @DeleteMapping("/{id}")

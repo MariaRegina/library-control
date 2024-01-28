@@ -1,6 +1,5 @@
-package com.mrsdeus.librarycontrol.models;
+package com.mrsdeus.librarycontrol.models.ApplicationUser;
 
-import java.sql.Date;
 import java.util.Collection;
 import java.util.Set;
 import java.util.UUID;
@@ -8,7 +7,10 @@ import java.util.UUID;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.mrsdeus.librarycontrol.models.BaseModel;
+
 import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -26,9 +28,6 @@ public class ApplicationUser implements UserDetails{
 	@Column(unique = true, nullable = false)
     private String email;
 
-    @Column(nullable = false)
-    private Date createDate;
-
     @Column(unique = true, nullable = false)
     private String username;
 
@@ -38,10 +37,11 @@ public class ApplicationUser implements UserDetails{
     @Column
     private Integer statusAccount;
     
+    @Embedded
+    private BaseModel baseModel;
+    
+    
     @ManyToMany(fetch = FetchType.EAGER)
-//    @JoinTable(
-//    		name="roles",
-//    		)
     private Set<Role> authorities;
 
     @Override
@@ -101,14 +101,6 @@ public class ApplicationUser implements UserDetails{
 		this.email = email;
 	}
 
-	public Date getCreateDate() {
-		return createDate;
-	}
-
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
-	}
-
 //	public Integer getStatusAccount() {
 //		return statusAccount;
 //	}
@@ -124,4 +116,21 @@ public class ApplicationUser implements UserDetails{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public Integer getStatusAccount() {
+		return statusAccount;
+	}
+
+	public void setStatusAccount(Integer statusAccount) {
+		this.statusAccount = statusAccount;
+	}
+
+	public BaseModel getBaseModel() {
+		return baseModel;
+	}
+
+	public void setBaseModel(BaseModel baseModel) {
+		this.baseModel = baseModel;
+	}
+
 }

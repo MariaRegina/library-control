@@ -10,10 +10,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.mrsdeus.librarycontrol.models.ApplicationUser;
-import com.mrsdeus.librarycontrol.models.Role;
-import com.mrsdeus.librarycontrol.repositories.ApplicationUserRepository;
-import com.mrsdeus.librarycontrol.repositories.RoleRepository;
+import com.mrsdeus.librarycontrol.models.BaseModel;
+import com.mrsdeus.librarycontrol.models.ApplicationUser.ApplicationUser;
+import com.mrsdeus.librarycontrol.models.ApplicationUser.Role;
+import com.mrsdeus.librarycontrol.repositories.ApplicationUser.ApplicationUserRepository;
+import com.mrsdeus.librarycontrol.repositories.ApplicationUser.RoleRepository;
 
 @SpringBootApplication
 public class LibraryControlApplication {
@@ -30,17 +31,17 @@ public class LibraryControlApplication {
 	      	
 	      	Set<Role> roles = new HashSet<Role>();
 			
-			Role admin = new Role("ADMIN");
-			Role user = new Role("USER");
+			Role admin = new Role("ADMIN", new Date((new java.util.Date()).getTime()));
+			Role user = new Role("USER", new Date((new java.util.Date()).getTime()));
 
 			roleRepository.save(admin);
 	      	roleRepository.save(user);
 			
 			roles.add(admin);
 			roles.add(user);
-	      	
+			
 	      	applicationUser.setPassword(passwordEncoder.encode("admin"));
-	      	applicationUser.setCreateDate(new Date((new java.util.Date()).getTime()));
+	      	applicationUser.setBaseModel(new BaseModel(new Date((new java.util.Date()).getTime())));
 	      	applicationUser.setEmail("teste");
 	      	applicationUser.setUsername("admin");
 	      	applicationUser.setAuthorities(roles);

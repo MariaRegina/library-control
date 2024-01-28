@@ -1,8 +1,10 @@
+C:\Users\maria\Documents\Estudo\Receber em dolar - amém\Java\library-control\src\main\java\com\mrsdeus\librarycontrol\repositories\ApplicationUser\ApplicationUserRepository.java
 C:\Users\maria\Documents\Estudo\Receber em dolar - amém\Java\library-control\src\main\java\com\mrsdeus\librarycontrol\services\ApplicationUserService.java
 C:\Users\maria\Documents\Estudo\Receber em dolar - amém\Java\library-control\src\main\java\com\mrsdeus\librarycontrol\LibraryControlApplication.java
-C:\Users\maria\Documents\Estudo\Receber em dolar - amém\Java\library-control\src\main\java\com\mrsdeus\librarycontrol\models\Role.java
-C:\Users\maria\Documents\Estudo\Receber em dolar - amém\Java\library-control\src\main\java\com\mrsdeus\librarycontrol\repositories\ApplicationUserRepository.java
+C:\Users\maria\Documents\Estudo\Receber em dolar - amém\Java\library-control\src\main\java\com\mrsdeus\librarycontrol\models\BaseModel.java
 C:\Users\maria\Documents\Estudo\Receber em dolar - amém\Java\library-control\src\main\java\com\mrsdeus\librarycontrol\security\SecurityConfig.java
-C:\Users\maria\Documents\Estudo\Receber em dolar - amém\Java\library-control\src\main\java\com\mrsdeus\librarycontrol\models\ApplicationUser.java
-C:\Users\maria\Documents\Estudo\Receber em dolar - amém\Java\library-control\src\main\java\com\mrsdeus\librarycontrol\repositories\RoleRepository.java
+C:\Users\maria\Documents\Estudo\Receber em dolar - amém\Java\library-control\src\main\java\com\mrsdeus\librarycontrol\repositories\BaseRepository.java
+C:\Users\maria\Documents\Estudo\Receber em dolar - amém\Java\library-control\src\main\java\com\mrsdeus\librarycontrol\repositories\ApplicationUser\RoleRepository.java
 C:\Users\maria\Documents\Estudo\Receber em dolar - amém\Java\library-control\src\main\java\com\mrsdeus\librarycontrol\controllers\ApplicationUserController.java
+C:\Users\maria\Documents\Estudo\Receber em dolar - amém\Java\library-control\src\main\java\com\mrsdeus\librarycontrol\models\ApplicationUser\ApplicationUser.java
+C:\Users\maria\Documents\Estudo\Receber em dolar - amém\Java\library-control\src\main\java\com\mrsdeus\librarycontrol\models\ApplicationUser\Role.java
